@@ -1,19 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MasterService } from '../../master.service';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from '../header/header.component'; // Import HeaderComponent
+
 
 @Component({
   selector: 'app-employee',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,HeaderComponent],
   templateUrl: './employee.component.html',
   styleUrl: './employee.component.css'
 })
-export class EmployeeComponent {
+export class EmployeeComponent implements OnInit{
    // Injecting the service using inject() method
         constructor(
           private masterSrv: MasterService,
         ) {}
+        headerTitle: string = '';  // Declare a property to store the header title
         
         gridList : any[]=[]; 
         deptList : any[]=[]; //initially deptList is empty and this datalist we need to display on the table

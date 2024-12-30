@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from '../header/header.component'; // Import HeaderComponent
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterOutlet,RouterLink],
+  imports: [RouterOutlet,RouterLink,HeaderComponent],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })
